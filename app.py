@@ -73,7 +73,7 @@ db.create_all()
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     # items = Diginadmin(amail='anjul@ad.com', apassword='123456')
-    admin = User(userMail="deneme", userPass="123456")
+    admin = User(userMail="admin", userPass="123456")
 
     db.session.add(admin)
     db.session.commit()
