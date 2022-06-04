@@ -1,0 +1,6 @@
+name: saglikApp
+services:
+- name: web
+  github:
+    repo: azazellsama/saglikApp
+    branch: main
