@@ -87,7 +87,7 @@ def login():
     
 
     if validatePass.userPass == userPass:
-        return jsonify({"isSuccess":True}), 200
+        return jsonify({"name":"Abdullah","surName":"Gökmen"}), 200
     return jsonify({"isSuccess":False}), 401
     
     # db.session.add(items)
