@@ -69,7 +69,6 @@ class User(db.Model):
 
 db.create_all()
 
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     # items = Diginadmin(amail='anjul@ad.com', apassword='123456')
@@ -85,14 +84,14 @@ def login():
     
     validatePass = User.query.filter(User.userMail == userMail).first()
     
-
-    if validatePass.userPass == userPass:
-        return jsonify({"name":"Abdullah","surName":"Gökmen"}), 200
-    return jsonify({"isSuccess":False}), 401
+    if validatePass:
+        if validatePass.userPass == userPass:
+            return jsonify({"name":"Abdullah","surName":"Gökmen"}), 200
+        return jsonify({"name":"errorPASS","surName":"errorPASS"}), 401
     
     # db.session.add(items)
     # db.session.commit()
-    return render_template('index.html')
+    return jsonify({"name":"errorUSER","surName":"errorUSER"}), 404
 
 
 # @app.route('/login/', methods=['GET', 'POST'])
